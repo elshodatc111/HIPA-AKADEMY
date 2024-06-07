@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\PaymeController; 
 use App\Http\Controllers\Api\ApiController; 
 use App\Http\Controllers\Api\AuthController; 
+use App\Http\Controllers\Api\UserController; 
 use App\Http\Controllers\TkunController; 
 
 Route::get('/user', function (Request $request) {
@@ -34,4 +35,8 @@ Route::group([
 ],function(){
     Route::get('/profel', [AuthController::class, 'profel']);
     Route::get('/logout', [AuthController::class, 'logout']);
+
+    Route::get('/guruh', [UserController::class, 'guruh']);
+    Route::get('/guruhshow', [UserController::class, 'guruhshow']);
+    Route::get('/tulovlar', [UserController::class, 'tulovlar']);
 });
